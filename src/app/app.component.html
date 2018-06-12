@@ -1,0 +1,71 @@
+<header>
+  <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+      <div class="container">
+          <a class="navbar-brand" href="javascript:;" th:href="@{/}">Upload</a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+  </nav>
+</header>
+
+<main role="main">
+  <section class="my-4">
+    <div class="container">
+        <h2>Upload CSV</h2>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <form method="post">
+        <div class="form-group">
+          <label for="upload">Upload</label>
+          <input type="file"  id="upload" name="upload"
+                 class="form-control" placeholder="Upload" (change)="inputFileChange($event)"/>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="thead-light text-center">
+            <tr>
+              <th>Id</th>
+              <th class="w-50">Var1</th>
+              <th class="w-50">Var2</th>
+              <th class="w-50">Var3</th>
+              <th class="w-50">Var4</th>
+              <th class="w-50">Var5</th>
+              <th class="w-50">Decision</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let csv of csvs">
+              <td class="text-center w-25">{{csv.id}}</td>
+
+
+              <td>{{csv.var1}}</td>
+              <td>{{csv.var2}}</td>
+              <td>{{csv.var3}}</td>
+              <td>{{csv.var4}}</td>
+              <td>{{csv.var5}}</td>
+              <td>{{csv.decision}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
